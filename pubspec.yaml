@@ -22,6 +22,7 @@ dependencies:
   http: ^0.13.4
   go_router: ^6.5.7
   scroll_to_id: ^1.5.1
+  lottie: ^2.3.2
 
   #  flutter_native_splash: ^2.2.6
   #  flutter_launcher_icons: ^0.11.0
@@ -44,6 +45,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/
+    - assets/lottie/
     #    - assets/logo/ #if you added your logo to app
     - locale/
 

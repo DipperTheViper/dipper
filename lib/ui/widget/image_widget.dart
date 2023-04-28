@@ -6,10 +6,10 @@ class ImageWidget extends StatelessWidget {
   const ImageWidget({
     Key? key,
     required this.url,
-    this.size = 48,
+    this.size,
   }) : super(key: key);
   final String url;
-  final double size;
+  final double? size;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class ImageWidget extends StatelessWidget {
             child: IconWidget(
               url: IconCategories.x,
               color: Colors.red,
-              size: size,
+              size: size ?? 64,
             ),
           );
         },

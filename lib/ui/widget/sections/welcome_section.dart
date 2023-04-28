@@ -1,5 +1,7 @@
 import 'package:dipper/ui/widget/image_widget.dart';
+import 'package:dipper/ui/widget/lotttie_widget.dart';
 import 'package:dipper/utils/categories/images_categories.dart';
+import 'package:dipper/utils/categories/lottie_category.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeSection extends StatelessWidget {
@@ -10,24 +12,26 @@ class WelcomeSection extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(64),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const ImageWidget(
             url: ImageCategories.dipper,
-            size: 180,
+            size: 480,
           ),
-          SizedBox(
-            height: 180,
+          Expanded(
             child: Padding(
               padding: const EdgeInsets.all(32),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
+                  const LottieWidget(
+                    url: LottieCategory.coder,
+                    // size: 320,
+                  ),Text(
                     "Hello, I'm Mahdi",
-                    //TODO add animation text write and clear
+                    //TODO: add animation text write and clear
                     textAlign: TextAlign.start,
                     style: Theme.of(context).textTheme.displayLarge,
                   ),
@@ -41,7 +45,7 @@ class WelcomeSection extends StatelessWidget {
                         ),
                         const TextSpan(
                           text:
-                              " with passion to experience new challenges and learning!",
+                              " with a passion to experience new challenges and learning!",
                         ),
                       ],
                     ),

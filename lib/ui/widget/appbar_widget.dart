@@ -32,45 +32,53 @@ class AppbarWidget extends StatelessWidget {
       //     ),
       //   ],
       // ),
-      actions: [
-        TextButtonWidget(
-          margin: const EdgeInsets.symmetric(horizontal: 2),
-          text: "Welcome",
-          onPressed: () {
-            context.read<ScrollControllerBloc>().add(
-                  ScrollToEvent(id: SectionCategory.welcomeId),
-                );
-          },
-        ),
-        TextButtonWidget(
-          margin: const EdgeInsets.symmetric(horizontal: 2),
-          text: "About Me",
-          onPressed: () {
-            context.read<ScrollControllerBloc>().add(
-                  ScrollToEvent(id: SectionCategory.aboutMeId),
-                );
-          },
-        ),
-        TextButtonWidget(
-          margin: const EdgeInsets.symmetric(horizontal: 2),
-          text: "Portfolio",
-          onPressed: () {
-            context.read<ScrollControllerBloc>().add(
-                  ScrollToEvent(id: SectionCategory.portfolioId),
-                );
-          },
-        ),
-        TextButtonWidget(
-          margin: const EdgeInsets.symmetric(horizontal: 2),
-          text: "Contact",
-          onPressed: () {
-            context.read<ScrollControllerBloc>().add(
-                  ScrollToEvent(id: SectionCategory.contactsId),
-                );
-          },
-        ),
-        const SizedBox(width: 8),
-      ],
+      centerTitle: true,
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          TextButtonWidget(
+            margin: const EdgeInsets.symmetric(horizontal: 2),
+            text: "Welcome",
+            style: Theme.of(context).textTheme.headlineLarge,
+            onPressed: () {
+              context.read<ScrollControllerBloc>().add(
+                    ScrollToEvent(id: SectionCategory.welcomeId),
+                  );
+            },
+          ),
+          TextButtonWidget(
+            margin: const EdgeInsets.symmetric(horizontal: 2),
+            text: "About Me",
+            style: Theme.of(context).textTheme.headlineLarge,
+            onPressed: () {
+              context.read<ScrollControllerBloc>().add(
+                    ScrollToEvent(id: SectionCategory.aboutMeId),
+                  );
+            },
+          ),
+          TextButtonWidget(
+            margin: const EdgeInsets.symmetric(horizontal: 2),
+            text: "Portfolio",
+            style: Theme.of(context).textTheme.headlineLarge,
+            onPressed: () {
+              context.read<ScrollControllerBloc>().add(
+                    ScrollToEvent(id: SectionCategory.portfolioId),
+                  );
+            },
+          ),
+          TextButtonWidget(
+            margin: const EdgeInsets.symmetric(horizontal: 2),
+            text: "Contact",
+            style: Theme.of(context).textTheme.headlineLarge,
+            onPressed: () {
+              context.read<ScrollControllerBloc>().add(
+                    ScrollToEvent(id: SectionCategory.contactsId),
+                  );
+            },
+          ),
+        ],
+      ),
     );
   }
 }
