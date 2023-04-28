@@ -37,6 +37,8 @@ class _MainScreenState extends State<MainScreen> {
           ScrollInitEvent(scrollToId: scrollToId),
         ),
       child: const Scaffold(
+        extendBody: true,
+        extendBodyBehindAppBar: true,
         appBar: PreferredSize(
           preferredSize: Size(double.infinity, 64),
           child: AppbarWidget(),

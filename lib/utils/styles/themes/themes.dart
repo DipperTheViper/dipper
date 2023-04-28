@@ -26,6 +26,24 @@ abstract class AppThemes {
     ).copyWith(
       secondary: ColorsCategory.primary,
     ),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor:
+            MaterialStateProperty.all<Color>(ColorsCategory.primary),
+        overlayColor: MaterialStateProperty.all<Color>(
+          ColorsCategory.primaryDark,
+        ),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+      ),
+    ),
+    appBarTheme: AppBarTheme(
+      backgroundColor: ColorsCategory.white.withOpacity(0.5),
+      elevation: 0,
+    ),
 
     // colorScheme: ColorScheme(
     //   brightness: Brightness.light,
@@ -42,63 +60,78 @@ abstract class AppThemes {
     // ),
     brightness: Brightness.light,
     textTheme: const TextTheme(
-      //based on weight
+      //based on size
       displayLarge: TextStyle(
         fontWeight: FontWeight.w700,
-        fontSize: 20,
+        fontSize: 36,
         color: ColorsCategory.black,
       ),
       displayMedium: TextStyle(
-        fontWeight: FontWeight.w700,
-        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        fontSize: 36,
         color: ColorsCategory.black,
       ),
       displaySmall: TextStyle(
-        fontWeight: FontWeight.w700,
-        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        fontSize: 36,
         color: ColorsCategory.black,
       ),
       headlineLarge: TextStyle(
-        fontWeight: FontWeight.w600,
-        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        fontSize: 24,
         color: ColorsCategory.black,
       ),
       headlineMedium: TextStyle(
-        fontWeight: FontWeight.w600,
-        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        fontSize: 24,
         color: ColorsCategory.black,
       ),
       headlineSmall: TextStyle(
-        fontWeight: FontWeight.w600,
-        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        fontSize: 24,
         color: ColorsCategory.black,
       ),
       titleLarge: TextStyle(
-        fontWeight: FontWeight.w500,
-        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        fontSize: 18,
         color: ColorsCategory.black,
       ),
       titleMedium: TextStyle(
         fontWeight: FontWeight.w500,
-        fontSize: 16,
+        fontSize: 18,
         color: ColorsCategory.black,
       ),
       titleSmall: TextStyle(
-        fontWeight: FontWeight.w500,
-        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        fontSize: 18,
         color: ColorsCategory.black,
       ),
       bodyLarge: TextStyle(
-        fontWeight: FontWeight.w400,
-        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        fontSize: 16,
         color: ColorsCategory.black,
       ),
       bodyMedium: TextStyle(
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w500,
         fontSize: 16,
         color: ColorsCategory.black,
       ),
       bodySmall: TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 16,
+        color: ColorsCategory.black,
+      ),
+      labelLarge: TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 14,
+        color: ColorsCategory.black,
+      ),
+      labelMedium: TextStyle(
+        fontWeight: FontWeight.w500,
+        fontSize: 14,
+        color: ColorsCategory.black,
+      ),
+      labelSmall: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: 14,
         color: ColorsCategory.black,

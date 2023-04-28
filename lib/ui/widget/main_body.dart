@@ -1,4 +1,5 @@
 import 'package:dipper/blocs/scroll_controller_bloc/scroll_controller_bloc.dart';
+import 'package:dipper/ui/widget/sections/welcome_section.dart';
 import 'package:dipper/utils/categories/section_category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,10 +18,7 @@ class MainBody extends StatelessWidget {
             children: [
               ScrollContent(
                 id: SectionCategory.welcomeId,
-                child: Container(
-                  height: MediaQuery.of(context).size.height,
-                  color: Colors.red,
-                ),
+                child: const WelcomeSection(),
               ),
               ScrollContent(
                 id: SectionCategory.aboutMeId,
@@ -46,7 +44,7 @@ class MainBody extends StatelessWidget {
             ],
           );
         } else {
-          return const SizedBox();
+          return const SizedBox(); //TODO broke page (404)
         }
       },
     );

@@ -14,8 +14,8 @@ class ImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: Theme.of(context).backgroundColor,
+      decoration: const BoxDecoration(
+        color: Colors.transparent,
         shape: BoxShape.circle,
       ),
       clipBehavior: Clip.antiAlias,
