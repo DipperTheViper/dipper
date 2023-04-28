@@ -1,7 +1,5 @@
 import 'package:dipper/blocs/scroll_controller_bloc/scroll_controller_bloc.dart';
-import 'package:dipper/ui/widgert/appbar_widget.dart';
-import 'package:dipper/ui/widgert/image_widget.dart';
-import 'package:dipper/utils/categories/images_categories.dart';
+import 'package:dipper/ui/widget/appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,7 +28,9 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ScrollControllerBloc(scrollController),
+      create: (context) => ScrollControllerBloc(
+        scrollController: scrollController,
+      ),
       child: BlocBuilder<ScrollControllerBloc, ScrollControllerState>(
         builder: (context, state) {
           return Scaffold(
@@ -39,19 +39,19 @@ class _MainScreenState extends State<MainScreen> {
               controller: state.scrollController,
               children: [
                 Container(
-                  height: 250,
+                  height: MediaQuery.of(context).size.height,
                   color: Colors.red,
                 ),
                 Container(
-                  height: 250,
+                  height: MediaQuery.of(context).size.height,
                   color: Colors.green,
                 ),
                 Container(
-                  height: 250,
+                  height: MediaQuery.of(context).size.height,
                   color: Colors.yellow,
                 ),
                 Container(
-                  height: 250,
+                  height: MediaQuery.of(context).size.height,
                   color: Colors.orange,
                 ),
               ],

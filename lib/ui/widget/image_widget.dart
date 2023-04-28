@@ -1,4 +1,4 @@
-import 'package:dipper/ui/widgert/icon_widget.dart';
+import 'package:dipper/ui/widget/icon_widget.dart';
 import 'package:dipper/utils/categories/icons_categories.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container (
+    return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).backgroundColor,
         shape: BoxShape.circle,

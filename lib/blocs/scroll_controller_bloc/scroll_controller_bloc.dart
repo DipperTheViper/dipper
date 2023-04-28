@@ -7,14 +7,29 @@ part 'scroll_controller_state.dart';
 
 class ScrollControllerBloc
     extends Bloc<ScrollControllerEvent, ScrollControllerState> {
-  ScrollControllerBloc(
-    ScrollController scrollController,
-  ) : super(
+  ScrollControllerBloc({
+    required ScrollController scrollController,
+  }) : super(
           ScrollControllerState(
             scrollController: scrollController,
           ),
         ) {
-    on<ScrollControllerEvent>(
+    on<ScrollToFirstEvent>(
+      (event, emit) {
+
+      },
+    );
+    on<ScrollToSecondEvent>(
+      (event, emit) {
+        // TODO: implement event handler
+      },
+    );
+    on<ScrollToThirdEvent>(
+      (event, emit) {
+        // TODO: implement event handler
+      },
+    );
+    on<ScrollToFourthEvent>(
       (event, emit) {
         // TODO: implement event handler
       },

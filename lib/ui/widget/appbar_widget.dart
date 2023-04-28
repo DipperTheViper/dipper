@@ -1,4 +1,4 @@
-import 'package:dipper/ui/widgert/image_widget.dart';
+import 'package:dipper/ui/widget/image_widget.dart';
 import 'package:dipper/utils/categories/images_categories.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +30,11 @@ class AppbarWidget extends StatelessWidget {
           ),
         ],
       ),
-      centerTitle: false,
+      actions: [
+        Center(
+          child: Text("lead"),
+        ),
+      ],
     );
   }
 }
