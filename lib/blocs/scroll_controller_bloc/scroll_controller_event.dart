@@ -2,10 +2,18 @@ part of 'scroll_controller_bloc.dart';
 
 abstract class ScrollControllerEvent {}
 
-class ScrollToFirstEvent extends ScrollControllerEvent {}
+class ScrollInitEvent extends ScrollControllerEvent {
+  ScrollInitEvent({
+    required this.scrollToId,
+  });
 
-class ScrollToSecondEvent extends ScrollControllerEvent {}
+  final ScrollToId scrollToId;
+}
 
-class ScrollToThirdEvent extends ScrollControllerEvent {}
+class ScrollToEvent extends ScrollControllerEvent {
+  ScrollToEvent({
+    required this.id,
+  });
 
-class ScrollToFourthEvent extends ScrollControllerEvent {}
+  final String id;
+}

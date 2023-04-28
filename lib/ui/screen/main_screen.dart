@@ -1,7 +1,9 @@
 import 'package:dipper/blocs/scroll_controller_bloc/scroll_controller_bloc.dart';
 import 'package:dipper/ui/widget/appbar_widget.dart';
+import 'package:dipper/ui/widget/main_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:scroll_to_id/scroll_to_id.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -12,10 +14,12 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   late ScrollController scrollController;
+  late ScrollToId scrollToId;
 
   @override
   void initState() {
     scrollController = ScrollController();
+    scrollToId = ScrollToId(scrollController: scrollController);
     super.initState();
   }
 
@@ -28,36 +32,16 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ScrollControllerBloc(
-        scrollController: scrollController,
-      ),
-      child: BlocBuilder<ScrollControllerBloc, ScrollControllerState>(
-        builder: (context, state) {
-          return Scaffold(
-            appBar: const AppbarWidget().build(context),
-            body: ListView(
-              controller: state.scrollController,
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height,
-                  color: Colors.green,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height,
-                  color: Colors.yellow,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height,
-                  color: Colors.orange,
-                ),
-              ],
-            ),
-          );
-        },
+      create: (context) => ScrollControllerBloc()
+        ..add(
+          ScrollInitEvent(scrollToId: scrollToId),
+        ),
+      child: const Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size(double.infinity, 64),
+          child: AppbarWidget(),
+        ),
+        body: MainBody(),
       ),
     );
   }

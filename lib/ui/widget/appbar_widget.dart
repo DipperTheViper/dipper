@@ -1,12 +1,18 @@
+import 'package:dipper/blocs/scroll_controller_bloc/scroll_controller_bloc.dart';
 import 'package:dipper/ui/widget/image_widget.dart';
 import 'package:dipper/utils/categories/images_categories.dart';
+import 'package:dipper/utils/categories/section_category.dart';
+import 'package:dipper/utils/categories/section_category.dart';
+import 'package:dipper/utils/categories/section_category.dart';
+import 'package:dipper/utils/categories/section_category.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppbarWidget extends StatelessWidget {
   const AppbarWidget({Key? key}) : super(key: key);
 
   @override
-  PreferredSizeWidget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return AppBar(
       title: Row(
         children: [
@@ -31,8 +37,45 @@ class AppbarWidget extends StatelessWidget {
         ],
       ),
       actions: [
-        Center(
-          child: Text("lead"),
+        IconButton(
+          onPressed: () {
+            context.read<ScrollControllerBloc>().add(
+                  ScrollToEvent(id: SectionCategory.welcomeId),
+                );
+          },
+          icon: const Icon(
+            Icons.plus_one,
+          ),
+        ),
+        IconButton(
+          onPressed: () {
+            context.read<ScrollControllerBloc>().add(
+                  ScrollToEvent(id: SectionCategory.aboutMeId),
+                );
+          },
+          icon: const Icon(
+            Icons.plus_one,
+          ),
+        ),
+        IconButton(
+          onPressed: () {
+            context.read<ScrollControllerBloc>().add(
+                  ScrollToEvent(id: SectionCategory.portfolioId),
+                );
+          },
+          icon: const Icon(
+            Icons.plus_one,
+          ),
+        ),
+        IconButton(
+          onPressed: () {
+            context.read<ScrollControllerBloc>().add(
+                  ScrollToEvent(id: SectionCategory.contactsId),
+                );
+          },
+          icon: const Icon(
+            Icons.plus_one,
+          ),
         ),
       ],
     );
