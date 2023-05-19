@@ -5,6 +5,7 @@ import 'package:dipper/utils/categories/locale_categories.dart';
 import 'package:dipper/utils/categories/lottie_category.dart';
 import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class WelcomeSection extends StatelessWidget {
   const WelcomeSection({Key? key}) : super(key: key);
@@ -76,11 +77,19 @@ class WelcomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      LocaleCategories.welcomeHeader.i18n(),
-      //TODO: add animation text write and clear
-      textAlign: TextAlign.start,
-      style: Theme.of(context).textTheme.displayLarge,
+    return AnimatedTextKit(
+      isRepeatingAnimation: true,
+      pause: const Duration(seconds: 3),
+      repeatForever: true,
+
+      animatedTexts: [
+        TypewriterAnimatedText(
+          speed: const Duration(milliseconds: 300),
+          LocaleCategories.welcomeHeader.i18n(),
+          textStyle: Theme.of(context).textTheme.displayLarge,
+          textAlign: TextAlign.start,
+        ),
+      ],
     );
   }
 }
