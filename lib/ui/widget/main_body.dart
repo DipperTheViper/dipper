@@ -25,6 +25,23 @@ class MainBody extends StatelessWidget {
                 child: Container(
                   height: MediaQuery.of(context).size.height,
                   color: Colors.green,
+                  child: LayoutBuilder(
+                      builder: (context, constraints) => Center(
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                    "Width: ${constraints.maxWidth}",
+                                    style: Theme.of(context).textTheme.headline4
+                                ),
+                                Text(
+                                    "Height: ${constraints.maxHeight}",
+                                    style: Theme.of(context).textTheme.headline4
+                                )
+                              ]
+                          )
+                      )
+                  )
                 ),
               ),
               ScrollContent(

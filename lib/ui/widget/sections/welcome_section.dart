@@ -11,25 +11,70 @@ class WelcomeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(64),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const ImageWidget(
-            url: ImageCategories.dipper,
-            size: 480,
-          ),
-          Expanded(
-            child: Padding(
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth > 600) {
+            return Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const Expanded(
+                  flex: 1,
+                  child: ImageWidget(
+                    url: ImageCategories.dipper,
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Padding(
+                    padding: const EdgeInsets.all(32),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        const LottieWidget(
+                          url: LottieCategory.coder,
+                          // size: 320,
+                        ),
+                        Text(
+                          "Hello, I'm Mahdi",
+                          //TODO: add animation text write and clear
+                          textAlign: TextAlign.start,
+                          style: Theme.of(context).textTheme.displayLarge,
+                        ),
+                        RichText(
+                          text: TextSpan(
+                            style: Theme.of(context).textTheme.titleLarge,
+                            children: [
+                              TextSpan(
+                                text: "Mobile developer",
+                                style:
+                                    Theme.of(context).textTheme.headlineLarge,
+                              ),
+                              const TextSpan(
+                                text:
+                                    " with a passion to experience new challenges and learning!",
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            );
+          } else {
+            return Padding(
               padding: const EdgeInsets.all(32),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const LottieWidget(
-                    url: LottieCategory.coder,
-                    // size: 320,
-                  ),Text(
+                  const ImageWidget(
+                    url: ImageCategories.dipper,
+                  ),
+                  Text(
                     "Hello, I'm Mahdi",
                     //TODO: add animation text write and clear
                     textAlign: TextAlign.start,
@@ -52,9 +97,9 @@ class WelcomeSection extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-          ),
-        ],
+            );
+          }
+        },
       ),
     );
   }

@@ -56,7 +56,6 @@ class ButtonWidget extends StatelessWidget {
     Key? key,
     required this.child,
     required this.onPressed,
-    this.style,
     this.width,
     this.height,
     this.margin,
@@ -67,7 +66,6 @@ class ButtonWidget extends StatelessWidget {
   }) : super(key: key);
   final Widget child;
   final void Function()? onPressed;
-  final TextStyle? style;
   final double? width;
   final double? height;
   final EdgeInsets? margin;
@@ -93,6 +91,42 @@ class ButtonWidget extends StatelessWidget {
               backgroundColor: MaterialStateProperty.all<Color>(color),
               overlayColor: MaterialStateProperty.all<Color>(overlay),
             ),
+        child: child,
+      ),
+    );
+  }
+}
+
+class IconButtonWidget extends StatelessWidget {
+  const IconButtonWidget({
+    Key? key,
+    required this.child,
+    required this.onPressed,
+    this.size,
+    this.margin,
+    this.padding,
+    this.color = Colors.transparent,
+  }) : super(key: key);
+  final Widget child;
+  final void Function()? onPressed;
+  final double? size;
+  final EdgeInsets? margin;
+  final EdgeInsets? padding;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: color,
+        ),
+        width: size,
+        height: size,
+        margin: margin ?? EdgeInsets.zero,
+        padding: padding ?? EdgeInsets.zero,
         child: child,
       ),
     );
