@@ -2,9 +2,11 @@ import 'package:dipper/blocs/scroll_controller_bloc/scroll_controller_bloc.dart'
 import 'package:dipper/ui/widget/button_widget.dart';
 import 'package:dipper/ui/widget/icon_widget.dart';
 import 'package:dipper/utils/categories/icons_categories.dart';
+import 'package:dipper/utils/categories/locale_categories.dart';
 import 'package:dipper/utils/categories/section_category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:localization/localization.dart';
 
 class AppbarWidget extends StatelessWidget {
   const AppbarWidget({Key? key}) : super(key: key);
@@ -12,28 +14,6 @@ class AppbarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      // title: Row(
-      //   children: [
-      //     const ImageWidget(
-      //       url: ImageCategories.dipper,
-      //       size: 48,
-      //     ),
-      //     const SizedBox(width: 8),
-      //     Column(
-      //       crossAxisAlignment: CrossAxisAlignment.start,
-      //       children: [
-      //         Text(
-      //           "Dipper",
-      //           style: Theme.of(context).textTheme.titleMedium,
-      //         ),
-      //         Text(
-      //           "Mobile Developer",
-      //           style: Theme.of(context).textTheme.titleSmall,
-      //         ),
-      //       ],
-      //     ),
-      //   ],
-      // ),
       centerTitle: true,
       title: LayoutBuilder(
         builder: (context, constraints) {
@@ -44,7 +24,7 @@ class AppbarWidget extends StatelessWidget {
               children: [
                 TextButtonWidget(
                   margin: const EdgeInsets.symmetric(horizontal: 2),
-                  text: "Welcome",
+                  text: LocaleCategories.welcome.i18n(),
                   style: Theme.of(context).textTheme.headlineLarge,
                   onPressed: () {
                     context.read<ScrollControllerBloc>().add(
@@ -54,7 +34,7 @@ class AppbarWidget extends StatelessWidget {
                 ),
                 TextButtonWidget(
                   margin: const EdgeInsets.symmetric(horizontal: 2),
-                  text: "About Me",
+                  text: LocaleCategories.aboutMe.i18n(),
                   style: Theme.of(context).textTheme.headlineLarge,
                   onPressed: () {
                     context.read<ScrollControllerBloc>().add(
@@ -64,7 +44,7 @@ class AppbarWidget extends StatelessWidget {
                 ),
                 TextButtonWidget(
                   margin: const EdgeInsets.symmetric(horizontal: 2),
-                  text: "Portfolio",
+                  text: LocaleCategories.portfolio.i18n(),
                   style: Theme.of(context).textTheme.headlineLarge,
                   onPressed: () {
                     context.read<ScrollControllerBloc>().add(
@@ -74,7 +54,7 @@ class AppbarWidget extends StatelessWidget {
                 ),
                 TextButtonWidget(
                   margin: const EdgeInsets.symmetric(horizontal: 2),
-                  text: "Contact",
+                  text: LocaleCategories.contact.i18n(),
                   style: Theme.of(context).textTheme.headlineLarge,
                   onPressed: () {
                     context.read<ScrollControllerBloc>().add(
@@ -90,7 +70,7 @@ class AppbarWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IconButtonWidget(
-                  margin: const EdgeInsets.symmetric(horizontal: 2),
+                  margin: const EdgeInsets.symmetric(horizontal: 4),
                   padding: const EdgeInsets.all(4),
                   onPressed: () {
                     context.read<ScrollControllerBloc>().add(
@@ -103,7 +83,7 @@ class AppbarWidget extends StatelessWidget {
                   ),
                 ),
                 IconButtonWidget(
-                  margin: const EdgeInsets.symmetric(horizontal: 2),
+                  margin: const EdgeInsets.symmetric(horizontal: 4),
                   padding: const EdgeInsets.all(4),
                   onPressed: () {
                     context.read<ScrollControllerBloc>().add(
@@ -116,7 +96,7 @@ class AppbarWidget extends StatelessWidget {
                   ),
                 ),
                 IconButtonWidget(
-                  margin: const EdgeInsets.symmetric(horizontal: 2),
+                  margin: const EdgeInsets.symmetric(horizontal: 4),
                   padding: const EdgeInsets.all(4),
                   onPressed: () {
                     context.read<ScrollControllerBloc>().add(
@@ -129,7 +109,7 @@ class AppbarWidget extends StatelessWidget {
                   ),
                 ),
                 IconButtonWidget(
-                  margin: const EdgeInsets.symmetric(horizontal: 2),
+                  margin: const EdgeInsets.symmetric(horizontal: 4),
                   padding: const EdgeInsets.all(4),
                   onPressed: () {
                     context.read<ScrollControllerBloc>().add(
@@ -141,46 +121,6 @@ class AppbarWidget extends StatelessWidget {
                     size: 32,
                   ),
                 ),
-                // TextButtonWidget(
-                //   margin: const EdgeInsets.symmetric(horizontal: 2),
-                //   text: "Welcome",
-                //   style: Theme.of(context).textTheme.headlineLarge,
-                //   onPressed: () {
-                //     context.read<ScrollControllerBloc>().add(
-                //           ScrollToEvent(id: SectionCategory.welcomeId),
-                //         );
-                //   },
-                // ),
-                // TextButtonWidget(
-                //   margin: const EdgeInsets.symmetric(horizontal: 2),
-                //   text: "About Me",
-                //   style: Theme.of(context).textTheme.headlineLarge,
-                //   onPressed: () {
-                //     context.read<ScrollControllerBloc>().add(
-                //           ScrollToEvent(id: SectionCategory.aboutMeId),
-                //         );
-                //   },
-                // ),
-                // TextButtonWidget(
-                //   margin: const EdgeInsets.symmetric(horizontal: 2),
-                //   text: "Portfolio",
-                //   style: Theme.of(context).textTheme.headlineLarge,
-                //   onPressed: () {
-                //     context.read<ScrollControllerBloc>().add(
-                //           ScrollToEvent(id: SectionCategory.portfolioId),
-                //         );
-                //   },
-                // ),
-                // TextButtonWidget(
-                //   margin: const EdgeInsets.symmetric(horizontal: 2),
-                //   text: "Contact",
-                //   style: Theme.of(context).textTheme.headlineLarge,
-                //   onPressed: () {
-                //     context.read<ScrollControllerBloc>().add(
-                //           ScrollToEvent(id: SectionCategory.contactsId),
-                //         );
-                //   },
-                // ),
               ],
             );
           }

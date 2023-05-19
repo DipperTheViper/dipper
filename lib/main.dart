@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:localization/localization.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LocalJsonLocalization.delegate.directories = ['locale'];
     return MaterialApp.router(
       useInheritedMediaQuery: true,
       debugShowCheckedModeBanner: false,
@@ -41,13 +43,16 @@ class MyApp extends StatelessWidget {
       title: 'Dipper',
       theme: AppThemes.lightTheme,
       routerConfig: _router,
-      localizationsDelegates: const [
-        GlobalCupertinoLocalizations.delegate,
+      localizationsDelegates: [
+        // delegate from flutter_localization
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        // delegate from localization package.
+        LocalJsonLocalization.delegate,
       ],
       supportedLocales: const [
-        Locale("en", "EN"),
+        Locale("en", "US"),
         Locale("fa", "IR"),
       ],
     );

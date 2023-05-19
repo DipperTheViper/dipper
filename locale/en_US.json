@@ -1,7 +1,14 @@
 {
   "helloWorld": "Hello World!",
-  "name" : "Mahdi",
-  "lastName" : "Kafash Kohan",
-  "nicName" : "Dipper",
-  "gitHub" : "DipperTheViper"
+  "name": "Mahdi",
+  "lastName": "Kafash Kohan",
+  "nicName": "Dipper",
+  "gitHub": "DipperTheViper",
+  "welcome": "Welcome",
+  "aboutMe": "About Me",
+  "portfolio": "Portfolio",
+  "contact": "Contact",
+  "welcomeHeader": "Hello, I'm Mahdi",
+  "welcomeJobTitle": "Mobile developer",
+  "welcomeDescription": " with a passion to experience new challenges and learning!"
 }
