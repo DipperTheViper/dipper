@@ -1,4 +1,5 @@
 import 'package:dipper/blocs/scroll_controller_bloc/scroll_controller_bloc.dart';
+import 'package:dipper/ui/widget/sections/about_me_section.dart';
 import 'package:dipper/ui/widget/sections/welcome_section.dart';
 import 'package:dipper/utils/categories/section_category.dart';
 import 'package:flutter/material.dart';
@@ -22,23 +23,7 @@ class MainBody extends StatelessWidget {
               ),
               ScrollContent(
                 id: SectionCategory.aboutMeId,
-                child: Container(
-                    height: MediaQuery.of(context).size.height,
-                    color: Colors.green,
-                    child: LayoutBuilder(
-                        builder: (context, constraints) => Center(
-                                child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                  Text("Width: ${constraints.maxWidth}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headline4),
-                                  Text("Height: ${constraints.maxHeight}",
-                                      style:
-                                          Theme.of(context).textTheme.headline4)
-                                ])))),
+                child: const AboutMeSection(),
               ),
               ScrollContent(
                 id: SectionCategory.portfolioId,
