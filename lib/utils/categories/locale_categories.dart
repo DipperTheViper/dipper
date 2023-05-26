@@ -11,4 +11,16 @@ abstract class LocaleCategories {
   static const String welcomeHeader = "welcomeHeader";
   static const String welcomeJobTitle = "welcomeJobTitle";
   static const String welcomeDescription = "welcomeDescription";
+  static const String bornTitle = "bornTitle";
+  static const String bornDescription = "bornDescription";
+  static const String universityTitle = "universityTitle";
+  static const String universityDescription = "universityDescription";
+  static const String icpcTitle = "icpcTitle";
+  static const String icpcDescription = "icpcDescription";
+  static const String coronaTitle = "coronaTitle";
+  static const String coronaDescription = "coronaDescription";
+  static const String baristaTitle = "baristaTitle";
+  static const String baristaDescription = "baristaDescription";
+  static const String narvanTitle = "narvanTitle";
+  static const String narvanDescription = "narvanDescription";
 }
