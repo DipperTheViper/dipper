@@ -13,6 +13,14 @@ class ScrollControllerBloc
       (event, emit) {
         emit(
           ScrollState(
+            accordionStatus: [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+            ],
             scrollToId: event.scrollToId,
           ),
         );
@@ -28,6 +36,29 @@ class ScrollControllerBloc
         );
         emit(
           ScrollState(
+            accordionStatus: initState.accordionStatus,
+            scrollToId: initState.scrollToId,
+          ),
+        );
+      },
+    );
+    on<ChangeAccordionStatusEvent>(
+      (event, emit) {
+        ScrollState initState = state as ScrollState;
+        List<bool> accordionStatus = [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+        ];
+        if (event.isOpened) {
+          accordionStatus[event.index] = true;
+        }
+        emit(
+          ScrollState(
+            accordionStatus: accordionStatus,
             scrollToId: initState.scrollToId,
           ),
         );

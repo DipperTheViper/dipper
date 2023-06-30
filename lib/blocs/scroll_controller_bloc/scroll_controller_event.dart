@@ -17,3 +17,13 @@ class ScrollToEvent extends ScrollControllerEvent {
 
   final String id;
 }
+
+class ChangeAccordionStatusEvent extends ScrollControllerEvent {
+  ChangeAccordionStatusEvent({
+    this.index = 0,
+    required this.isOpened,
+  });
+
+  final int index;
+  final bool isOpened;
+}
